@@ -1,3 +1,29 @@
+locals {
+  minions = ["bob", "kevin", "stewart"]
+}
+resource "null_resource" "minions" {
+  for_each = toset(local.minions)
+  triggers = {
+    name = each.value
+  }
+}
+output "minions" {
+  value = null_resource.minions
+}
+
+locals {
+  names = ["bob", "kevin", "stewart", "devops"]
+}
+resource "null_resource" "names" {
+  count = length(local.names)
+  triggers = {
+    name = local.names[count.index]
+  }
+}
+output "names" {
+  value = null_resource.names
+}
+
 resource "dns_a_record_set" "test_1803" {
     zone = "my.vizlab.com."
     name = "test-1803"
