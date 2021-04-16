@@ -25,3 +25,4 @@ variable "txt_name" {
     type = list(string)
     default = []
 }
+

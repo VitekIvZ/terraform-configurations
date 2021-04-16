@@ -59,6 +59,7 @@ resource "gitlab_user" "user" {
   reset_password   = false
 }
 
+
 //resource "dns_txt_record_set" "google" {
 //  zone = "example.com."
 //  txt = [
