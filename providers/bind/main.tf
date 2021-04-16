@@ -5,7 +5,7 @@
 //  for_each = toset(local.minions)
 //  triggers = {
 //    name = each.value
- // }
+// }
 //}
 //output "minions" {
 //  value = null_resource.minions
@@ -25,12 +25,38 @@
 //}
 
 resource "dns_a_record_set" "test_1803" {
-    zone = "my.vizlab.com."
-    name = "test-1803"
-    addresses = [
-        "192.168.1.99",
-    ]
-    ttl = 300
+  zone = "my.vizlab.com."
+  name = "test-1803"
+  addresses = [
+    "192.168.1.99",
+  ]
+  ttl = 300
+}
+
+# Add a group
+resource "gitlab_group" "sample_group" {
+    name = "example"
+    path = "example"
+    description = "An example group"
+}
+
+# Add a project to the group - example/example
+resource "gitlab_project" "sample_group_project" {
+    name = "example"
+    namespace_id = gitlab_group.sample_group.id
+}
+
+
+resource "gitlab_user" "user" {
+  name             = "User Foo"
+  username         = "user"
+  password         = "usergitlab"
+  email            = "user@my.domain"
+  is_admin         = true
+  projects_limit   = 4
+  can_create_group = false
+  is_external      = true
+  reset_password   = false
 }
 
 //resource "dns_txt_record_set" "google" {

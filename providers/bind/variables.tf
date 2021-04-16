@@ -1,17 +1,17 @@
 //variable "vault_address" {}
 
 variable "a_record" {
-    description = "DNS A Record"
-    type = string
+  description = "DNS A Record"
+  type        = string
 }
 
 variable "zone" {
-    description = "DNS zone"
-    type = string
+  description = "DNS zone"
+  type        = string
 }
 
 variable "ip" {
-    description = "IP"
-    type = list(string)
-    default = []
+  description = "IP"
+  type        = list(string)
+  default     = []
 }
