@@ -3,6 +3,7 @@ locals {
     txt = [
         "v=spf1 include:_spf.google.com ~all"
     ]
+    #test = var.vault_address
 }
 
 module "a-record" {

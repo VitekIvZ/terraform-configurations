@@ -1,5 +1,5 @@
 provider "dns" {
-  version = "~> 3.0"
+  version = ">= 3.0.0"
   update {
     server        = "192.168.206.129"
     key_name      = "terr-key."
@@ -13,7 +13,7 @@ provider "dns" {
 
 # Configure the GitLab Provider
 provider "gitlab" {
-  version  = "~> 3.0"
+  version  = ">= 3.6.0"
   base_url = "http://192.168.206.135/api/v4/"
   token    = "zrkPb3GxosoBKjNUHiH1"
 }
@@ -24,4 +24,11 @@ provider "minio" {
   minio_region = var.minio_region
   minio_access_key = var.minio_access_key
   minio_secret_key = var.minio_secret_key
+}
+
+# Configure the Consul provider
+provider "consul" {
+  address    = "192.168.206.133:8500"
+  scheme = "http"
+  datacenter = "dc1"
 }

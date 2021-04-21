@@ -1,5 +1,5 @@
 provider "dns" {
-  version = "~> 3.0"
+  version = ">= 3.0.0"
   update {
     server        = "192.168.206.129"
     key_name      = "terr-key."

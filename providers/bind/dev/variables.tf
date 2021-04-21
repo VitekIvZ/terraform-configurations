@@ -14,5 +14,5 @@ variable "ip" {
     default = []
 }
 
-
+#variable "vault_address" {}
 
