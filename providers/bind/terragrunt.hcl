@@ -11,6 +11,6 @@ remote_state {
 inputs = {
     aws_region = "eu-central-1"
     terraform_remote_state_file_name = "terraform.tfstate"
-    #vault_address = "https://vault-f.my.vizlab.com:8200"
+    vault_address = "https://192.168.206.135:8200"
 }
 

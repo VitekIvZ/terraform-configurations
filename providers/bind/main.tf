@@ -33,7 +33,7 @@ resource "dns_a_record_set" "test_1803" {
   ttl = 300
 }
 
-# Add a group
+/*# Add a group
 resource "gitlab_group" "sample_group" {
     name = "example"
     path = "example"
@@ -51,13 +51,13 @@ resource "gitlab_user" "user" {
   name             = "User Foo"
   username         = "user"
   password         = "usergitlab"
-  email            = "user@my.domain"
+  email            = "z-vi@i.ua"
   is_admin         = true
   projects_limit   = 4
   can_create_group = false
   is_external      = true
   reset_password   = false
-}
+}*/
 
 
 //resource "dns_txt_record_set" "google" {

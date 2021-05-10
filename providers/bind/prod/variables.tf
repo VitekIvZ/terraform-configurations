@@ -14,5 +14,8 @@ variable "ip" {
     default = []
 }
 
-#variable "vault_address" {}
+variable "vault_address" {
+    version  = "~> 2.19.1"
+  address    = "http://192.168.206.135:8200"
+}
 
